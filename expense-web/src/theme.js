@@ -4,24 +4,25 @@ const theme = createTheme({
   palette: {
     mode: "light",
     background: {
-      default: "#f6f7fb",
+      default: "#F8FAFC",
       paper: "#ffffff",
     },
     primary: {
-      main: "#6c5ce7", // tím nhẹ giống ảnh
+      main: "#059669",
     },
     text: {
-      primary: "#1f2937",
-      secondary: "#6b7280",
+      primary: "#0F172A",
+      secondary: "#64748B",
     },
   },
   shape: {
     borderRadius: 14,
   },
   typography: {
-    fontFamily: "Inter, Roboto, sans-serif",
+    fontFamily: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
     fontSize: 14,
   },
 });
 
 export default theme;
+

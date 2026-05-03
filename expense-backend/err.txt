@@ -1,0 +1,17 @@
+Error: Cannot find module 'nodemailer'
+Require stack:
+- D:\PROJECT_MANGEMENT\expense-backend\src\controllers\auth.controller.js
+- D:\PROJECT_MANGEMENT\expense-backend\src\routes\auth.routes.js
+- D:\PROJECT_MANGEMENT\expense-backend\src\app.js
+- D:\PROJECT_MANGEMENT\expense-backend\server.js
+- D:\PROJECT_MANGEMENT\expense-backend\[eval]
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.require (node:internal/modules/cjs/loader:1463:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (D:\PROJECT_MANGEMENT\expense-backend\src\controllers\auth.controller.js:6:20)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)

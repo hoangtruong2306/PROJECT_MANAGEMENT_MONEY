@@ -1,0 +1,7 @@
+...
+### Phase 4: Finance UI Revamp & Adding Goals Page
+- [ ] Backend: Sửa `wallet.model.js` thêm JOIN lệnh SQL tính `total_income` và `total_expense` của từng ví.
+- [ ] Frontend: Nâng cấp `AccountList.jsx` hiển thị `Thu: ... / Chi: ...` theo số liệu SQL Backend trả về.
+- [ ] Frontend: Nâng cấp `SavingGoal.jsx` hiển thị Mốc thời gian đếm ngược trực quan, thêm nút "+ Thêm mục tiêu".
+- [ ] Frontend: API Bind POST request cho hàm `createGoal` trong `api.js`.
+- [ ] Frontend: Gõ toàn bộ UI Form và Logic submit cho file `AddGoal.jsx`.

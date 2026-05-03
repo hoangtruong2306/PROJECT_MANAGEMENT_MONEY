@@ -1,25 +1,50 @@
+/* ===== FINTECH DESIGN TOKENS ===== */
+:root {
+  --color-primary: #059669;
+  --color-primary-light: #EEF2FF;
+  --color-success: #10B981;
+  --color-success-light: #D1FAE5;
+  --color-danger: #F43F5E;
+  --color-danger-light: #FFE4E6;
+  --color-warning: #F59E0B;
+  --color-warning-light: #FEF3C7;
+  --color-background: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #64748B;
+  --color-text-muted: #94A3B8;
+  --color-border: #E2E8F0;
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-elevated: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --radius-card: 20px;
+  --radius-button: 12px;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
+  background-color: var(--color-background);
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-   overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 /* ===== FIX RECHARTS FOCUS OUTLINE ===== */
 .recharts-wrapper:focus,
 .recharts-wrapper:focus-visible,
@@ -29,6 +54,7 @@ svg:focus,
 svg:focus-visible {
   outline: none !important;
 }
+
 /* ===== ẨN SCROLLBAR NGOÀI (WINDOW) ===== */
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
@@ -40,4 +66,3 @@ html,
 body {
   scrollbar-width: none;
 }
-

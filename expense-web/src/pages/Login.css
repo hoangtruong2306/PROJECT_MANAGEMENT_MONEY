@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:    #0f1f3d;
+  --navy2:   #162447;
+  --green:   #00c896;
+  --green2:  #00a87a;
+  --green-lt:#e6faf5;
+  --red:     #ff5c6a;
+  --slate:   #64748b;
+  --slate-lt:#f1f5f9;
+  --white:   #ffffff;
+  --border:  #e2e8f0;
+}
+
+body { margin: 0; }
+
+.lr-root {
+  min-height: 100vh;
+  display: flex;
+  font-family: 'Nunito Sans', 'Nunito', sans-serif;
+  background: #f8fafc;
+}
+
+/* ── HERO SIDE ── */
+.lr-hero {
+  flex: 1 1 58%;
+  background: linear-gradient(145deg, #0c1a35 0%, #162d5a 55%, #0a2240 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 64px 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) { .lr-hero { display: none; } }
+
+.lr-hero::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,200,150,0.12) 0%, transparent 70%);
+  top: -120px; right: -120px;
+  pointer-events: none;
+}
+
+.lr-hero-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.lr-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 490px;
+}
+
+.lr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(0,200,150,0.15);
+  border: 1px solid rgba(0,200,150,0.3);
+  border-radius: 100px;
+  padding: 5px 14px 5px 8px;
+  margin-bottom: 30px;
+  animation: fadeUp 0.6s ease both;
+}
+.lr-badge-icon {
+  width: 22px; height: 22px;
+  background: var(--green);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+}
+.lr-badge-text { font-size: 12px; color: var(--green); font-weight: 600; letter-spacing: 0.04em; }
+
+.lr-hero-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(34px, 3.2vw, 50px);
+  font-weight: 800;
+  line-height: 1.12;
+  color: #fff;
+  margin-bottom: 16px;
+  animation: fadeUp 0.6s 0.1s ease both;
+  opacity: 0;
+}
+.lr-hero-title .accent { color: var(--green); }
+
+.lr-hero-sub {
+  font-size: 14.5px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.48);
+  line-height: 1.75;
+  margin-bottom: 36px;
+  animation: fadeUp 0.6s 0.2s ease both;
+  opacity: 0;
+}
+
+/* Balance card */
+.card-mockup {
+  background: linear-gradient(135deg, #1b3f72 0%, #102850 100%);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 20px;
+  padding: 24px 28px 20px;
+  margin-bottom: 14px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.35);
+  animation: fadeUp 0.6s 0.3s ease both;
+  opacity: 0;
+}
+.card-mockup::before {
+  content: '';
+  position: absolute;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: rgba(0,200,150,0.07);
+  top: -70px; right: -50px;
+  pointer-events: none;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+.card-label { font-size: 11px; color: rgba(255,255,255,0.38); letter-spacing: 0.12em; text-transform: uppercase; }
+.card-month-tag {
+  background: rgba(0,200,150,0.18);
+  color: var(--green);
+  font-size: 11px; font-weight: 600;
+  padding: 3px 10px; border-radius: 100px;
+}
+
+.card-balance {
+  font-family: 'Nunito', sans-serif;
+  font-size: 36px; font-weight: 700;
+  color: #fff; letter-spacing: -0.02em;
+  margin-bottom: 3px;
+}
+.card-balance-sub { font-size: 12px; color: rgba(255,255,255,0.32); margin-bottom: 18px; }
+
+.sparkline { width: 100%; height: 48px; margin-bottom: 14px; }
+
+.card-stats { display: flex; }
+.card-stat { flex: 1; padding: 10px 0; }
+.card-stat + .card-stat { border-left: 1px solid rgba(255,255,255,0.07); padding-left: 18px; }
+.card-stat-label { font-size: 10px; color: rgba(255,255,255,0.32); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; }
+.card-stat-val { font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 600; color: #fff; }
+.card-stat-val.up { color: var(--green); }
+.card-stat-val.dn { color: #ff8a94; }
+
+/* Category pills */
+.cat-row {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  animation: fadeUp 0.6s 0.45s ease both;
+  opacity: 0;
+}
+.cat-pill {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 100px;
+  padding: 6px 14px 6px 8px;
+  font-size: 12px; font-weight: 500;
+  color: rgba(255,255,255,0.62);
+  cursor: default;
+  transition: background 0.2s;
+}
+.cat-pill:hover { background: rgba(255,255,255,0.1); }
+.cat-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+/* ── FORM SIDE ── */
+.lr-form-side {
+  flex: 0 0 420px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 52px 48px;
+  box-shadow: -6px 0 40px rgba(15,31,61,0.07);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .lr-form-side { flex: 1; padding: 40px 28px; box-shadow: none; }
+}
+
+.app-identity { display: flex; align-items: center; gap: 10px; margin-bottom: 36px; }
+.app-logo {
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, #0f1f3d 0%, #1e4080 100%);
+  border-radius: 11px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 4px 14px rgba(15,31,61,0.22);
+}
+.app-name { font-family: 'Nunito', sans-serif; font-size: 17px; font-weight: 700; color: #0f1f3d; }
+.app-name span { color: var(--green2); }
+
+.form-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 27px; font-weight: 700;
+  color: #0f1f3d; margin-bottom: 6px; letter-spacing: -0.02em;
+}
+.form-sub { font-size: 13.5px; color: var(--slate); margin-bottom: 30px; }
+
+.field { margin-bottom: 16px; }
+.field-label { display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 7px; }
+.field-wrap { position: relative; }
+.field-input {
+  width: 100%; padding: 12px 16px;
+  border: 1.5px solid #e2e8f0; border-radius: 10px;
+  font-family: 'Nunito Sans', 'Nunito', sans-serif;
+  font-size: 14.5px; color: #0f1f3d; background: #fff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  -webkit-appearance: none;
+}
+.field-input::placeholder { color: #b8c4d0; }
+.field-input:focus {
+  border-color: #0f1f3d;
+  box-shadow: 0 0 0 3px rgba(15,31,61,0.08);
+  background: #fafcff;
+}
+.field-input-pw { padding-right: 46px; }
+
+.pw-btn {
+  position: absolute; right: 13px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; cursor: pointer; color: #94a3b8;
+  display: flex; align-items: center; padding: 4px; transition: color 0.2s;
+}
+.pw-btn:hover { color: #0f1f3d; }
+
+.row-extras {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 22px; margin-top: -2px;
+}
+.remember { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--slate); cursor: pointer; user-select: none; }
+.remember input[type=checkbox] { width: 15px; height: 15px; accent-color: #0f1f3d; cursor: pointer; }
+.forgot-a { font-size: 13px; color: var(--green2); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+.forgot-a:hover { color: #0f1f3d; }
+
+.err-box {
+  display: flex; align-items: center; gap: 8px;
+  background: #fff5f5; border: 1px solid #fecaca;
+  border-left: 3px solid var(--red); border-radius: 8px;
+  padding: 10px 14px; color: #dc2626; font-size: 13px; margin-bottom: 16px;
+}
+
+.submit-btn {
+  width: 100%; padding: 14px;
+  background: #0f1f3d; border: none; border-radius: 10px;
+  color: #fff; font-family: 'Nunito Sans', 'Nunito', sans-serif;
+  font-size: 15px; font-weight: 600; cursor: pointer;
+  position: relative; overflow: hidden;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 18px rgba(15,31,61,0.22);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin-bottom: 20px; letter-spacing: 0.01em;
+}
+.submit-btn:hover:not(:disabled) {
+  background: #162d5a; transform: translateY(-1px);
+  box-shadow: 0 8px 26px rgba(15,31,61,0.3);
+}
+.submit-btn:active:not(:disabled) { transform: translateY(0); }
+.submit-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.submit-btn::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.1) 50%, transparent 65%);
+  transform: translateX(-100%); transition: transform 0.5s;
+}
+.submit-btn:hover::after { transform: translateX(100%); }
+
+.spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff; border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+  display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.sec-divider { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.sec-line { flex:1; height:1px; background: #e2e8f0; }
+.sec-text { font-size: 11px; color: #94a3b8; letter-spacing: 0.1em; }
+
+.trust-row { display: flex; gap: 7px; justify-content: center; margin-bottom: 22px; }
+.trust-badge {
+  display: flex; align-items: center; gap: 5px;
+  background: #f1f5f9; border-radius: 6px;
+  padding: 5px 10px; font-size: 11px; color: var(--slate); font-weight: 500;
+}
+
+.reg-row { text-align: center; font-size: 13.5px; color: var(--slate); }
+.reg-row a { color: var(--green2); text-decoration: none; font-weight: 700; transition: color 0.2s; }
+.reg-row a:hover { color: #0f1f3d; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.lr-form-side > * { animation: fadeUp 0.5s ease both; }
+.lr-form-side > *:nth-child(1) { animation-delay: 0.05s; }
+.lr-form-side > *:nth-child(2) { animation-delay: 0.12s; }
+.lr-form-side > *:nth-child(3) { animation-delay: 0.18s; }
+.lr-form-side > *:nth-child(4) { animation-delay: 0.24s; }

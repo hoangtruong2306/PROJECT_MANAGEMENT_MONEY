@@ -1,0 +1,27 @@
+.aider*
+.env
+.env.*
+
+# Node
+node_modules/
+dist/
+build/
+npm-debug.log
+yarn-error.log
+
+# Android / Mobile
+.gradle/
+local.properties
+*.jks
+*.keystore
+expense-mobile/app/build/
+expense-mobile/.idea/
+expense-mobile/app/google-services.json
+
+# API test files
+*test_api.js
+*test_login_api.js
+
+# OS files
+.DS_Store
+Thumbs.db
